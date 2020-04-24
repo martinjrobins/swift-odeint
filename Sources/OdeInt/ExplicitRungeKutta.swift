@@ -31,8 +31,6 @@ func explicitRungeKutta<Vector: OdeVector, Tableau: ButchersTableau>(tableau: Ta
   while (t_n < ts[N - 1]) { 
     var step_rejected = true 
     while (step_rejected) {
-      //print("attempting step \(step_count) with it = \(it), h_n = \(h_n)")
-
       // reuse last k (we have asserted that the last c value is 1.0)
       let last_k_store = k[stages - 1]
       k[0] = k[stages - 1]
