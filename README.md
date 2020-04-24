@@ -7,16 +7,6 @@ dense output to the times specified by the user.
 The original method is documented in [[1]](#1) as method 7M, and the dense output is 
 documented in [[2]](#2), Section 4.
 
-## References
-<a id="1">[1]</a> 
-Dormand, J. R., & Prince, P. J. (1980). A family of embedded Runge-Kutta formulae. 
-Journal of computational and applied mathematics, 6(1), 19-26.
-
-
-<a id="2">[2]</a> 
-Dormand, J. R., & Prince, P. J. (1986). Runge-Kutta triples. Computers & Mathematics 
-with Applications, 12(9), 1007-1017.
-
 # Usage 
 
 The protocol `OdeVector` defines a state vector to be used in the integration, and both 
@@ -43,3 +33,13 @@ let results = SIMD2<Float>.integrate(over: times, y0: [1.0, 2.0], tol: 1e-6) { y
 let solution = times.map { SIMD2(exp(-$0), 2 * exp(-$0)) }
 assertEqual(solution, results, 1e-6)
 ```
+
+# References
+<a id="1">[1]</a> 
+Dormand, J. R., & Prince, P. J. (1980). A family of embedded Runge-Kutta formulae. 
+Journal of computational and applied mathematics, 6(1), 19-26.
+
+
+<a id="2">[2]</a> 
+Dormand, J. R., & Prince, P. J. (1986). Runge-Kutta triples. Computers & Mathematics 
+with Applications, 12(9), 1007-1017.
