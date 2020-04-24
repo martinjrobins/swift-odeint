@@ -19,8 +19,6 @@ let times = Array<Double>(stride(from: 0.0, through: 1.0, by: 0.001))
 let results = Double.integrate(over: times, y0: 1.0, tol: 1e-6) { y, t in
   return -y
 }
-let solution = times.map { exp(-$0) }
-assertEqual(solution, results, 1e-6)
 ```
 
 Or you can solve the same ODE using a vector initial condition $y(0) = [1, 2]$ using:
@@ -30,8 +28,6 @@ let times = Array<Float>(stride(from: 0.0, through: 1.0, by: 0.001))
 let results = SIMD2<Float>.integrate(over: times, y0: [1.0, 2.0], tol: 1e-6) { y, t in
   return -y
 }
-let solution = times.map { SIMD2(exp(-$0), 2 * exp(-$0)) }
-assertEqual(solution, results, 1e-6)
 ```
 
 # References
