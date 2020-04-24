@@ -1,4 +1,4 @@
-func explicit_runge_kutta<Vector: OdeVector, Tableau: ButchersTableau>(tableau: Tableau, 
+func explicitRungeKutta<Vector: OdeVector, Tableau: ButchersTableau>(tableau: Tableau, 
                           ys: inout UnsafeMutableBufferPointer<Vector>, 
                           ts: Array<Vector.Scalar>, y0: Vector, 
                           dydx: @escaping (Vector, Vector.Scalar) -> Vector, 
