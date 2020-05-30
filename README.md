@@ -1,4 +1,6 @@
-# OdeInt
+# OdeInt 
+
+![Swift](https://github.com/martinjrobins/swift-odeint/workflows/Swift/badge.svg?branch=master)
 
 A swift implementation of explict runge-kutta ODE integration using the Dormond Price 
 RK5(4) method, also known as the DOPRI method. This uses adaptive time-stepping, and 
